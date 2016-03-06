@@ -10,7 +10,7 @@ io.on('connection', function (io) {
     io.on("save-kastelen", function(data){
         console.log("Save kastelen:", data);
         
-        fs.writeFile("./config/kastelen.js", "var afstanden = {json};".replace("{json}", data), function(err){
+        fs.writeFile("./config/kastelen.js", data, function(err){
             if(err) throw err;
             console.log("Kastelen gesaved");
         });
