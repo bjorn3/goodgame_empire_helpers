@@ -1,0 +1,45 @@
+doctype html
+html(lang="nl")
+    head
+        title good game empire helpers
+        
+        //include dependencies
+        script(src="/lib/jquery/dist/jquery.min.js")
+        script(src="/jade/runtime.js")
+        
+        //include foundation
+        link(rel="stylesheet" href="/lib/foundation/css/normalize.css")
+        link(rel="stylesheet" href="/lib/foundation/css/foundation.css")
+        script(src="/lib/foundation/js/foundation.min.js")
+        
+        //config
+        script(type="text/javascript").
+            var exports = {};
+        script(src="/config/plugins.js")
+        script(src="/config/kastelen.js")
+        
+        //include app
+        script(src="/socket.io/socket.io.js")
+        script.
+            var io = io();
+            jQuery(function($){
+                $(document).foundation();
+            });
+        
+        //plugin
+        block scripts
+            
+    body
+        nav.top-bar(data-topbar role="navigation")
+            ul.title-area
+                li.name
+                    h1: a(href="/") Good Game Empire helpers
+                li.toggle-topbar.menu-icon: a(href="#"): span Menu
+            
+            section.top-bar-section
+                ul.right
+                    each plugin in plugins
+                        li: a(href="/page/#{plugin}")= plugin
+        header
+            h1 Good Game Empire helpers
+        block main

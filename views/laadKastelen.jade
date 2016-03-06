@@ -1,0 +1,17 @@
+extends layouts/app
+
+block scripts
+    script.
+        jQuery(function($){
+            $("#save").click(function(){
+                var text = $("#json-output").val()
+                io.emit("save-kastelen", text);
+            });
+        });
+block main
+    div.row
+            fieldset
+                legend goodgame_empire_import output
+                textarea#json-output(rows="25")
+                table#output
+                button#save save

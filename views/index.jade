@@ -1,0 +1,6 @@
+extends layouts/app
+
+block main
+    ul
+        each plugin in plugins
+            li: a(href="/page/#{plugin}")= plugin
