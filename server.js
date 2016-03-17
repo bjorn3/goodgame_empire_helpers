@@ -1,3 +1,5 @@
+/* node:true */
+'use strict';
 var express = require('express');
 var app = express();
 var http = require('http').createServer(app);
@@ -10,7 +12,9 @@ io.on('connection', function (io) {
         console.log("Save kastelen:", data);
         
         fs.writeFile("./config/kastelen.js", data, function(err){
-            if(err) throw err;
+            if(err){
+                throw err;
+            }
             console.log("Kastelen gesaved");
         });
     });
