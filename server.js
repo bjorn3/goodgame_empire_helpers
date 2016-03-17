@@ -25,7 +25,7 @@ app.get('/', function(req, res){
 });
 
 app.use('/config', express.static('config'));
-app.use('/lib', express.static('lib'));
+app.use('/bower_components', express.static('bower_components'));
 app.get('/page/:plugin', function(req, res){
     res.render(req.params.plugin + '.jade', {plugins: plugins});
 });

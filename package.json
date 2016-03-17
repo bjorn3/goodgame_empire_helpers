@@ -7,7 +7,7 @@
     "good-game-empire"
   ],
   "author": "bjorn3",
-  "license": "GPLv3",
+  "license": "GPL-3.0",
   "dependencies": {
     "express": "*",
     "jade": "*",
