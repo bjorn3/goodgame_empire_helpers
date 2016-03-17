@@ -40,6 +40,5 @@ html(lang="nl")
                 ul.right
                     each plugin in plugins
                         li: a(href="/page/#{plugin}")= plugin
-        header
-            h1 Good Game Empire helpers
-        block main
+        div.row
+            block main

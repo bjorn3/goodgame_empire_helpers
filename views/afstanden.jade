@@ -72,24 +72,23 @@ block scripts
             });
         });
 block main
-    div.row
-        fieldset
-            legend Input
-            dl.sub-nav#wereld
-                dt Wereld:
-                dd.active: a#gras(href="#") gras
-                dd: a#ijs(href="#") ijs
-                dd: a#zand(href="#") zand
-                dd: a#vuur(href="#") vuur
-            label(for="kastelen") Kasteel:
-            select#kastelen
-        fieldset
-            legend Resultaten
-            table#results
-                thead
-                    th name
-                    th X
-                    th Y
-                    th wereld
-                    th afstand
-                tbody
+    fieldset
+        legend Input
+        dl.sub-nav#wereld
+            dt Wereld:
+            dd.active: a#gras(href="#") gras
+            dd: a#ijs(href="#") ijs
+            dd: a#zand(href="#") zand
+            dd: a#vuur(href="#") vuur
+        label(for="kastelen") Kasteel:
+        select#kastelen
+    fieldset
+        legend Resultaten
+        table#results
+            thead
+                th name
+                th X
+                th Y
+                th wereld
+                th afstand
+            tbody
