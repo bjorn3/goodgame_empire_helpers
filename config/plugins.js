@@ -1,1 +1,0 @@
-exports.plugins = ["afstanden", "laadKastelen"];

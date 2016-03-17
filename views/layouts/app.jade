@@ -38,7 +38,9 @@ html(lang="nl")
             
             section.top-bar-section
                 ul.right
-                    each plugin in plugins
-                        li: a(href="/page/#{plugin}")= plugin
+                    li: a(href="/page/afstanden").
+                        afstanden
+                    li: a(href="/page/laadKastelen").
+                        laad kastelen
         div.row
             block main

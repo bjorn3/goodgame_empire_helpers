@@ -3,7 +3,6 @@ var app = express();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 var fs = require('fs');
-var plugins = require('./config/plugins.js').plugins;
 var jade = require('jade');
 
 io.on('connection', function (io) {
@@ -21,13 +20,13 @@ io.on('connection', function (io) {
 app.engine("jade", jade.__express);
 
 app.get('/', function(req, res){
-    res.render("index.jade", {plugins: plugins});
+    res.render("index.jade");
 });
 
 app.use('/config', express.static('config'));
 app.use('/bower_components', express.static('bower_components'));
 app.get('/page/:plugin', function(req, res){
-    res.render(req.params.plugin + '.jade', {plugins: plugins});
+    res.render(req.params.plugin + '.jade');
 });
 app.use('/plugins', express.static('plugins'));
 app.use('/jade', express.static('node_modules/jade'));

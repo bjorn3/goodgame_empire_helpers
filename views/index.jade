@@ -1,6 +1,8 @@
 extends layouts/app
 
 block main
-    ul
-        each plugin in plugins
-            li: a(href="/page/#{plugin}")= plugin
+    div.button-group.secundary
+        a.button.success(href="/page/afstanden").
+            afstanden
+        a.button(href="/page/laadKastelen").
+            laad kastelen
