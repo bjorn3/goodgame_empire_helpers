@@ -1,0 +1,27 @@
+<template name="distance">
+    <fieldset>
+        <legend>Input</legend>
+        <dl class="sub-nav" id="wereld">
+            dt Wereld:
+            dd.active: a#gras(href="#") gras
+            dd: a#ijs(href="#") ijs
+            dd: a#zand(href="#") zand
+            dd: a#vuur(href="#") vuur
+        </dl>
+        <label for="kastelen">Kasteel:</label>
+        <select id="kastelen"></select>
+    </fieldset>
+    <fieldset>
+        <legend>Resultaten</legend>
+        <table id="results">
+            <thead>
+                <th>name</th>
+                <th>X</th>
+                <th>Y</th>
+                <th>wereld</th>
+                <th>afstand</th>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </fieldset>
+</template>
