@@ -33,6 +33,5 @@ if(Meteor.isClient){
                 wereld: Session.get("world")
             });
         }
-    }
     });
 }
