@@ -1,27 +1,43 @@
 <template name="distance">
     <fieldset>
         <legend>Input</legend>
-        <dl class="sub-nav" id="wereld">
-            dt Wereld:
-            dd.active: a#gras(href="#") gras
-            dd: a#ijs(href="#") ijs
-            dd: a#zand(href="#") zand
-            dd: a#vuur(href="#") vuur
-        </dl>
+        <label for="world">Wereld: </label>
+        <select id="world">
+            <option value="grass">gras</option>
+            <option value="ice">ijs</option>
+            <option value="sand">zand</option>
+            <option value="fire">vuur</option>
+        </select>
         <label for="kastelen">Kasteel:</label>
-        <select id="kastelen"></select>
+        <select id="kastelen">
+            {{#each castles}}
+                <option value="{{name}}">{{name}}</option>
+            {{/each}}
+        </select>
     </fieldset>
     <fieldset>
         <legend>Resultaten</legend>
         <table id="results">
             <thead>
-                <th>name</th>
-                <th>X</th>
-                <th>Y</th>
-                <th>wereld</th>
-                <th>afstand</th>
+                <tr>
+                    <th>name</th>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>wereld</th>
+                    <th>afstand</th>
+                </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>
+                {{#each castles}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{X}}</td>
+                    <td>{{Y}}</td>
+                    <td>{{wereld}}</td>
+                    <td>distance</td>
+                </tr>
+                {{/each}}
+            </tbody>
         </table>
     </fieldset>
 </template>
