@@ -8,10 +8,10 @@
             <option value="sand">zand</option>
             <option value="fire">vuur</option>
         </select>
-        <label for="kastelen">Kasteel:</label>
-        <select id="kastelen">
+        <label for="castles">Kasteel:</label>
+        <select id="castles">
             {{#each castles}}
-                <option value="{{name}}">{{name}}</option>
+                <option value="{{_id}}">{{name}}</option>
             {{/each}}
         </select>
     </fieldset>
@@ -28,13 +28,13 @@
                 </tr>
             </thead>
             <tbody>
-                {{#each castles}}
+                {{#each castleDistances}}
                 <tr>
                     <td>{{name}}</td>
                     <td>{{X}}</td>
                     <td>{{Y}}</td>
                     <td>{{wereld}}</td>
-                    <td>distance</td>
+                    <td>{{distance}}</td>
                 </tr>
                 {{/each}}
             </tbody>

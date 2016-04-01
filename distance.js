@@ -23,7 +23,9 @@ if(Meteor.isClient){
             if(!Session.get("world")){
                Session.set("world", "gras");
             }
-
+        },
+        "change #castles": function(event, self){
+            Session.set("castle", self.$("#castles")[0].selectedOptions[0].value);
         }
     });
 
@@ -31,6 +33,28 @@ if(Meteor.isClient){
         castles: function(){
             return Castles.find({
                 wereld: Session.get("world")
+            });
+        },
+        castleDistances: function(){
+            let castles = Castles.find({
+                wereld: Session.get("world")
+            });
+            return castles.fetch().map(function(castle){
+                let cmpCastle = Castles.findOne(Session.get("castle"));
+                if(!cmpCastle){
+                    castle.distance = "Selecteer een kasteel";
+                }else{
+                    let diff_x = Math.abs(castle.X - cmpCastle.X);
+                    let diff_y = Math.abs(castle.Y - cmpCastle.Y);
+                    castle.distance = Math.sqrt(Math.pow(diff_x, 2) + Math.pow(diff_y, 2));
+                }
+                return castle;
+            }).sort(function(a,b){
+                if(a.distance === "Selecteer een kasteel"){
+                    return -1;
+                }else{
+                    return a.distance > b.distance;
+                }
             });
         }
     });
