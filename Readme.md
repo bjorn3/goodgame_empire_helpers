@@ -12,15 +12,15 @@ $ cargo run
 $ cd ../
 
 # install goodgame_empire_helpers
+$ curl https://install.meteor.com/ | sh
 $ git clone https://github.com/bjorn3/goodgame_empire_helpers.git
-$ cd goodgame_empire_helpers
-$ bower install
-$ npm install
 
 # run goodgame_empire_helpers
-$ node server.js
+$ cd goodgame_empire_helpers
+$ meteor
 
-# navigate to localhost:8080/page/laadKastelen
-# put the content of the exported file in the field and chose save
-# navigate to localhost:8080
+# navigate to localhost:3000/import
+# create account
+# put the content of the exported file in the field and chose import
+# navigate to localhost:3000
 ```
