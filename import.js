@@ -1,3 +1,5 @@
+/* global $ */
+
 Router.route("/import", function(){
     this.render("import");
 });
