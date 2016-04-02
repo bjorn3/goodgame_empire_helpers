@@ -1,5 +1,3 @@
-/* global $ */
-
 Router.configure({
     layoutTemplate: "layout"
 });
