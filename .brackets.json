@@ -1,0 +1,6 @@
+{
+    "jwolfe.file-tree-exclude.list": [
+        ".git",
+        ".meteor/local"
+    ]
+}

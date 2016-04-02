@@ -1,0 +1,8 @@
+@import '{zurb:foundation-sites}/scss/foundation';
+
+@include foundation-everything;
+
+.button.active{
+    background-color: #1583cc;
+    color: #fefefe;
+}
