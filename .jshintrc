@@ -1,0 +1,4 @@
+{
+    "predef": ["Castles", "Meteor", "Template", "Session", "Router", "AccountsTemplates", "Mongo", "SimpleSchema"],
+    "esnext": true
+}

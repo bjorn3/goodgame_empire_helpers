@@ -1,4 +1,4 @@
-/* global Meteor, Template, Session, Router, AccountsTemplates, $ */
+/* global $ */
 
 Router.configure({
     layoutTemplate: "layout"

@@ -1,6 +1,3 @@
-/* global Meteor, Template, Session, Router */
-/* globals Castles */
-
 Router.route("/distance", function(){
     this.render("distance");
 });
