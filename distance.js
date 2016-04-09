@@ -52,6 +52,9 @@ if(Meteor.isClient){
                 return castle.name !== cmpCastle.name;
             }).sort(function(a,b){
                 return a.distance > b.distance;
+            }).map(function(castle){
+                castle.distance = Math.round(castle.distance);
+                return castle;
             });
         }
     });
