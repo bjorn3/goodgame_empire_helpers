@@ -24,3 +24,5 @@ $ meteor
 # put the content of the exported file in the field and chose import
 # navigate to localhost:3000
 ```
+
+## This is gpg signed
