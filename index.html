@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bower_components/foundation/css/foundation.min.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="bower_components/foundation/js/foundation.min.js"></script>
+    <script src="bower_components/handlebars/handlebars.js"></script>
+    <script src="app.js"></script>
+    <title>Goodgame empire helpers</title>
+</head>
+<body lang="en">
+    <div class="top-bar" data-topbar role="navigation">
+        <div class="top-bar-section">
+            <ul class="left">
+                <li class="menu-text"><a href="#">Goodgame Empire helpers</a></li>
+                <li><a href="#">Afstanden</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="row">
+        <fieldset>
+            <legend>Input</legend>
+            <label for="world">Wereld: </label>
+            <select id="world">
+                <option value="grass">gras</option>
+                <option value="ice">ijs</option>
+                <option value="sand">zand</option>
+                <option value="fire">vuur</option>
+            </select>
+            <label for="castles">Kasteel:</label>
+            <div id="castles_wrapper"></div>
+        </fieldset>
+        <fieldset>
+            <legend>Resultaten</legend>
+            <table id="results">
+                <thead>
+                    <tr>
+                        <th>name</th>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>wereld</th>
+                        <th>afstand</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </fieldset>
+    </div>
+</body>
+</html>

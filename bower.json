@@ -1,0 +1,25 @@
+{
+  "name": "goodgame_empire_helpers",
+  "version": "0.0.2",
+  "homepage": "https://github.com/bjorn3/goodgame_empire_helpers",
+  "authors": [
+    "bjorn3"
+  ],
+  "description": "Helpers for goodgame empire",
+  "main": "index.html",
+  "keywords": [
+    "goodgame_empire"
+  ],
+  "license": "GPL-3.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "handlebars": "~4.0.5",
+    "foundation": "~5.5.3"
+  }
+}
