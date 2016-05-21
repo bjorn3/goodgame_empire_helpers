@@ -12,10 +12,10 @@
     <title>Goodgame empire helpers</title>
 </head>
 <body lang="en">
-    <header class="row"><h1>Goodgame Empire helpers</h1></header>
-    <div class="row">
-        <fieldset>
-            <legend>Input</legend>
+    <div class="row" style="padding: 1.25rem; padding-top: 0">
+        <section style="width: 100%; overflow: scroll;">
+            <header><h1>Goodgame Empire helpers</h1></header>
+            <header><h3>Input</h3></header>
             <label for="world">Wereld: </label>
             <select id="world">
                 <option value="grass">gras</option>
@@ -25,10 +25,11 @@
             </select>
             <label for="castles">Kasteel:</label>
             <div id="castles_wrapper"></div>
-        </fieldset>
-        <fieldset>
-            <legend>Resultaten</legend>
-            <table id="results">
+        </section>
+        <hr>
+        <section style="width: 100%; overflow: scroll;">
+            <header><h3>Resultaten</h3></header>
+            <table id="results" style="width: 100%; overflow: scroll;">
                 <thead>
                     <tr>
                         <th>name</th>
@@ -41,7 +42,7 @@
                 <tbody>
                 </tbody>
             </table>
-        </fieldset>
+        </section>
     </div>
 </body>
 </html>
