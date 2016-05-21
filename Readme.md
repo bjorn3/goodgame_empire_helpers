@@ -14,9 +14,9 @@ $ cd goodgame_empire_import
 $ cargo run
 $ cd ../
 
-# copy the contents of goodgame_empire_import/data.json to goodgame_empire_helpers/app.js at the specified place.
 
 # run goodgame_empire_helpers
 $ cd goodgame_empire_helpers
 $ firefox ./index.html
+# copy the contents of goodgame_empire_import/data.json to the textfield.
 ```

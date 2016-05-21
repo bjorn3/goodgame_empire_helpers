@@ -1,8 +1,12 @@
 /* globals Handlebars */
 
-const castles = //insert data.json here
+var castles = [];
 
 jQuery(function($){
+    $("#data").on("change", function(){
+        render_castle_list();
+        render_table();
+    });
     $("#world").on("change", function(){
         render_castle_list();
         render_table();
@@ -12,6 +16,11 @@ jQuery(function($){
 });
 
 function render_castle_list(){
+    try{
+        castles = JSON.parse($("#data").val()) || [];
+    }catch(e){
+        castles = [];
+    }
     let world = $("#world")[0].selectedOptions[0].textContent;
     let castles_template = Handlebars.compile(`<select id="castles">
             {{#each castles}}
@@ -32,7 +41,11 @@ function render_table(){
     let world_castles = castles.filter(function(castle){
         return castle.wereld === world;
     });
-    let selected_castle = world_castles[$("#castles")[0].selectedOptions[0].value];
+    let selected_castle = [];
+    try{
+        selected_castle = world_castles[$("#castles")[0].selectedOptions[0].value];
+    }catch(e){
+    }
     let table_template = Handlebars.compile(`{{#each castleDistances}}
             <tr>
                 <td width="500">{{name}}</td>
