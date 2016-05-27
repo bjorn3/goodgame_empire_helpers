@@ -14,11 +14,11 @@
 <body lang="en">
     <div class="row" style="padding: 1.25rem; padding-top: 0">
         <header><h1>Goodgame Empire helpers</h1></header>
-        <section class="width: 100%; overflow: scroll;">
+        <section class="width: 100%; overflow: hidden;">
             <header><h3>Data</h3></header>
             <textarea id="data" style="width:100%;" rows="10" placeholder="Pleace insert the data from goodgame empire importer (data.json)"></textarea>
         </section>
-        <section style="width: 100%; overflow: scroll;">
+        <section style="width: 100%; overflow: hidden;">
             <header><h3>Input</h3></header>
             <label for="world">Wereld: </label>
             <select id="world">
@@ -31,9 +31,9 @@
             <div id="castles_wrapper"></div>
         </section>
         <hr>
-        <section style="width: 100%; overflow: scroll;">
+        <section style="width: 100%; overflow: hidden;">
             <header><h3>Resultaten</h3></header>
-            <table id="results" style="width: 100%; overflow: scroll;">
+            <table id="results" style="width: 100%; overflow: auto;">
                 <thead>
                     <tr>
                         <th>name</th>
