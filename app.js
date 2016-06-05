@@ -101,7 +101,6 @@ function render_table(){
                 <td width="500">{{name}}</td>
                 <td>{{x}}</td>
                 <td>{{y}}</td>
-                <td>{{wereld}}</td>
                 <td>{{distance}}</td>
             </tr>
         {{/each}}`);
