@@ -1,4 +1,4 @@
-/* globals Handlebars */
+/* globals L, Handlebars */
 
 var castles = [];
 var map;
@@ -35,7 +35,7 @@ function render_castle_list(){
     try{
         castles = JSON.parse($("#data").val()) || [];
     }catch(e){
-        castles = [];
+        castles = {castles:{}};
     }
     let world = $("#world")[0].selectedOptions[0].value;
     let castles_template = Handlebars.compile(`<select id="castles">
