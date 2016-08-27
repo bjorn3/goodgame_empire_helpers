@@ -22,7 +22,7 @@
         <header><h1>Goodgame Empire helpers</h1></header>
         <section class="width: 100%; overflow: hidden;">
             <header><h3>Data</h3></header>
-            <textarea id="data" style="width:100%;" rows="10" placeholder="Pleace insert the data from goodgame empire importer (data2.json)"></textarea>
+            <textarea id="data" style="width:100%;" rows="5" placeholder="Pleace insert the data from goodgame empire importer (data2.json)"></textarea>
         </section>
         <section style="width: 100%; overflow: hidden;">
             <header><h3>Input</h3></header>
@@ -37,23 +37,24 @@
             <div id="castles_wrapper"></div>
         </section>
         <hr>
-        <section style="width: 100%; overflow: hidden;">
+        <section>
             <header><h3>Resultaten</h3></header>
-            <table id="results" style="width: 100%; overflow: auto;">
-                <thead>
-                    <tr>
-                        <th>name</th>
-                        <th>X</th>
-                        <th>Y</th>
-                        <th>afstand</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-            
-            <div id="map" style="height: 90vh;"></div>
+            <div style="width: 100%; max-height: 40vh; overflow-y: scroll; overflow-x: hidden; margin-bottom: 20px;">
+                <table id="results" style="width: 100%; margin: 0px;">
+                    <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>X</th>
+                            <th>Y</th>
+                            <th>afstand</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </div>
+    <div id="map" style="height: 90vh;width:90vw;display:inline-block;"></div>
 </body>
 </html>
