@@ -26,8 +26,15 @@ jQuery(function($){
     render_castle_list();
     render_table();
     
-    map = L.map("map").setView([0,0], 0);
-    L.tileLayer('tile.png', {continuousWorld: true, maxNativeZoom: 0, maxZoom: 8}).addTo(map);
+    map = L.map("map", {
+        center: [600,600],
+        zoom: 0,
+        minZoom: 0,
+        maxZoom: 16,
+        maxBounds: [[0,0], [1200,1200]],
+        crs: L.CRS.Simple
+    });//.setView([0,0], 0);
+    L.tileLayer('tile.png', {continuousWorld: true, maxNativeZoom: 0, maxZoom: 16}).addTo(map);
     render_map();
 });
 
@@ -116,7 +123,7 @@ function render_map(){
     markers = [];
     
     for(let castle of castleDistances){
-        let marker = L.marker([castle.x/10, castle.y/10], {icon:castleIcon}).bindPopup(castle.name).addTo(map);
+        let marker = L.marker([castle.x, castle.y], {icon:castleIcon}).bindPopup(castle.name).addTo(map);
         markers.push(marker);
     }
 }
