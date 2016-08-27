@@ -1,7 +1,10 @@
 /* globals L, Handlebars */
 
+const zoom = 10;
+
 var castles = [];
 var map;
+var castle_layer;
 var markers = [];
 
 var castleIcon = L.icon({
@@ -27,14 +30,16 @@ jQuery(function($){
     render_table();
     
     map = L.map("map", {
-        center: [600,600],
-        zoom: 0,
-        minZoom: 0,
+        center: [600/zoom,600/zoom],
+        zoom: 3,
+        minZoom: 2,
         maxZoom: 16,
-        maxBounds: [[0,0], [1200,1200]],
+        maxBounds: [[0,0], [1200/zoom,1200/zoom]],
         crs: L.CRS.Simple
     });//.setView([0,0], 0);
     L.tileLayer('tile.png', {continuousWorld: true, maxNativeZoom: 0, maxZoom: 16}).addTo(map);
+    castle_layer = L.layerGroup().addTo(map);
+    
     render_map();
 });
 
@@ -118,12 +123,12 @@ function render_map(){
     let castleDistances = get_castles();
     
     for(let marker of markers){
-        map.removeLayer(marker);
+        castle_layer.map.removeLayer(marker);
     }
     markers = [];
     
     for(let castle of castleDistances){
-        let marker = L.marker([castle.x, castle.y], {icon:castleIcon}).bindPopup(castle.name).addTo(map);
+        let marker = L.marker([castle.x/zoom, castle.y/zoom], {icon:castleIcon}).bindPopup(castle.name).addTo(castle_layer);
         markers.push(marker);
     }
 }

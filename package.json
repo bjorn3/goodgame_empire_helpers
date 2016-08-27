@@ -1,0 +1,24 @@
+{
+  "name": "goodgame_empire_helpers",
+  "version": "0.0.2",
+  "description": "Helpers for goodgame empire",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjorn3/goodgame_empire_helpers.git"
+  },
+  "keywords": [
+    "goodgame_empire"
+  ],
+  "author": "bjorn3",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/bjorn3/goodgame_empire_helpers/issues"
+  },
+  "homepage": "https://github.com/bjorn3/goodgame_empire_helpers",
+  "dependencies": {
+    "leaflet.layerscontrol-minimap": "^1.0.9"
+  }
+}
