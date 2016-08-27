@@ -11,11 +11,27 @@
     
     <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
     <script src="bower_components/leaflet/dist/leaflet-src.js"></script>
+    
+    <link rel="stylesheet" href="bower_components/leaflet.markercluster/dist/MarkerCluster.css">
+    <script src="bower_components/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    
     <link rel="stylesheet" href="node_modules/leaflet.layerscontrol-minimap/control.layers.minimap.css">
     <script src="node_modules/leaflet.layerscontrol-minimap/L.Control.Layers.Minimap.js"></script>
     
     <script src="app.js"></script>
     <title>Goodgame empire helpers</title>
+    
+    <style>
+        .own_alliance_castle_icon{
+            filter: invert(100%);
+        }
+        .multiple_icons{
+            filter: brightness(200%);
+        }
+        .own_alliance_castle_icon.multiple_icons{
+            filter: invert(100%) brightness(200%);
+        }
+    </style>
 </head>
 <body lang="en">
     <div class="row" style="padding: 1.25rem; padding-top: 0">
@@ -39,7 +55,7 @@
         <hr>
         <section>
             <header><h3>Resultaten</h3></header>
-            <div style="width: 100%; max-height: 40vh; overflow-y: scroll; overflow-x: hidden; margin-bottom: 20px;">
+            <div style="width: 100%; max-height: 20vh; overflow-y: scroll; overflow-x: hidden; margin-bottom: 20px;">
                 <table id="results" style="width: 100%; margin: 0px;">
                     <thead>
                         <tr>
