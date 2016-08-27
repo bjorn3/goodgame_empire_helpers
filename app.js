@@ -8,8 +8,6 @@ var own_alliance_castle_layer;
 var castle_layer;
 var markers = [];
 
-L_PREFER_CANVAS = true;
-
 var ownAllianceCastleIcon = L.icon({
     className: "own_alliance_castle_icon",
     iconUrl: 'marker.castle.color.png',
@@ -60,7 +58,7 @@ jQuery(function($){
             icon.options.className = "own_alliance_castle_icon multiple_icons";
             return icon;
         },
-        maxClusterRadius: 20
+        maxClusterRadius: 40
     }).addTo(map);
     castle_layer = L.markerClusterGroup({
         iconCreateFunction: function() {
@@ -70,7 +68,7 @@ jQuery(function($){
             icon.options.className = "multiple_icons";
             return icon;
         },
-        maxClusterRadius: 20
+        maxClusterRadius: 40
     }).addTo(map);
     
     render_map();
