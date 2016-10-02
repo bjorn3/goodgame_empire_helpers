@@ -63,7 +63,11 @@ function init_map(){
 function render_map(castleDistances){
 
     for(let marker of markers){
-        castle_layer.removeLayer(marker);
+        try{
+            castle_layer.removeLayer(marker);
+        }catch(e){
+            own_alliance_castle_layer.removeLayer(marker);
+        }
     }
     markers = [];
 
