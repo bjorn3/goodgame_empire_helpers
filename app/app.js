@@ -4,12 +4,16 @@ jQuery(function($){
     $("#data").on("change", function(){
         render_castle_list();
         render_table();
-        requestAnimationFrame(render_map);
+        requestAnimationFrame(function(){
+            render_map(get_castles());
+        });
     });
     $("#world").on("change", function(){
         render_castle_list();
         render_table();
-        requestAnimationFrame(render_map);
+        requestAnimationFrame(function(){
+            render_map(get_castles());
+        });
     });
     render_castle_list();
     render_table();
