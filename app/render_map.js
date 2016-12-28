@@ -7,7 +7,6 @@ window.castles = [];
 var map;
 var own_alliance_castle_layer;
 var castle_layer;
-var markers = [];
 
 var ownAllianceCastleIcon = L.icon({
     className: "own_alliance_castle_icon",
@@ -36,7 +35,12 @@ function init_map(){
         crs: L.CRS.Simple
     });
     L.tileLayer('tile.png', {continuousWorld: true, maxNativeZoom: 0, maxZoom: 16}).addTo(map);
+}
 
+function render_map(castleDistances){
+    if(castle_layer){map.removeLayer(castle_layer);}
+    if(own_alliance_castle_layer){map.removeLayer(own_alliance_castle_layer);}
+    
     own_alliance_castle_layer = L.markerClusterGroup({
         iconCreateFunction: function() {
             let icon = Object.create(ownAllianceCastleIcon);
@@ -58,19 +62,7 @@ function init_map(){
         },
         maxClusterRadius: 40
     }).addTo(map);
-}
-
-function render_map(castleDistances){
-
-    for(let marker of markers){
-        try{
-            castle_layer.removeLayer(marker);
-        }catch(e){
-            own_alliance_castle_layer.removeLayer(marker);
-        }
-    }
-    markers = [];
-
+    
     let own_alliance_castles = castleDistances.filter(function(castle){
         return window.castles.users[castle.owner_id].own_alliance;
     });
@@ -80,16 +72,22 @@ function render_map(castleDistances){
     });
 
     for(let castle of own_alliance_castles){
-        let marker = L.marker([castle.x/zoom, castle.y/zoom], {icon:ownAllianceCastleIcon}).bindPopup(castle.name).addTo(own_alliance_castle_layer);
-        markers.push(marker);
+        let marker = L.marker([castle.x/zoom, castle.y/zoom], {icon:ownAllianceCastleIcon});
+        if(castle.name){
+            marker = marker.bindPopup(castle.name);
+        }
+        marker.addTo(own_alliance_castle_layer);
     }
 
     own_alliance_castle_layer.refreshClusters();
 
     requestAnimationFrame(function(){
         for(let castle of other_alliance_castles){
-            let marker = L.marker([castle.x/zoom, castle.y/zoom], {icon:castleIcon}).bindPopup(castle.name).addTo(castle_layer);
-            markers.push(marker);
+            let marker = L.marker([castle.x/zoom, castle.y/zoom], {icon:castleIcon});
+            if(castle.name){
+                marker = marker.bindPopup(castle.name);
+            }
+            marker.addTo(castle_layer);
         }
         castle_layer.refreshClusters();
     });
