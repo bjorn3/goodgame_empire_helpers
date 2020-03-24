@@ -1,5 +1,7 @@
 # Helpers for goodgame empire
 
+# Development discontinued
+
 ## Quick Start
 ```sh
 # import data from goodgame empire:
